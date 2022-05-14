@@ -1,11 +1,17 @@
 import React,{Component} from "react";
+//Import the component at a time to learn the things present in it. Mainly component is imported from components folder.
+//Please remove the below line about the already learned component's import and add the new import line to include the component that you want. 
+import MountingCycle from "./components/MountingCycle";
 
 
 class App extends Component{
 
   render(){
     return(
-      <div>Hello world</div>
+      <div>
+        {/* Add the imported component to learn concept present in it. */}
+        <MountingCycle/>
+      </div>
     )
   }
 }
