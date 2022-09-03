@@ -37,20 +37,20 @@ const UseEffect = () => {
     // })
 
     return (
-        <>
+        <div>
 
-            <div>UseEffect</div>
+            <h2>useEffect for performing the actions when the state changes</h2>
 
             <button onClick={()=>{setPage("users")}}>Users</button>
             <button onClick={()=>{setPage("posts")}}>Posts</button>
             <button onClick={()=>{setPage("comments")}}>Comments</button>
 
-            <h2>{page}</h2>
+            <h3>{page}</h3>
 
             {itemdata.map(item=>{
                 return <pre>{JSON.stringify(item)}</pre>
             })}
-        </>
+        </div>
     )
 }
 

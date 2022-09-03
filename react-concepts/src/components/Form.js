@@ -34,10 +34,10 @@ export default class Form extends React.Component{
         return(
             <div>
                 {/* For displaying the change in state according to the input */}
+                <h2>Login Form</h2>
                 <span>{this.state.username}</span>
                 <span>{this.state.age}</span>
 
-                <h2>Login Form</h2>
 
                 {/* taking the inputs and assigning the each input with separate handler*/}
                 <form onSubmit={this.submitHandler}>
