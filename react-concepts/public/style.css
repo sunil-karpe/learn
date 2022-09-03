@@ -1,8 +1,21 @@
-#root{
+#root {
     text-align: center;
-    color:tomato;
+    color: tomato;
 }
 
-body{
+body {
     /* background-color: red; */
+    margin: 0;
+}
+
+div:nth-child(1) div div{
+    background-color:grey;
+    color:white;
+    width: 100vw;
+    margin:0;
+    margin-bottom: 30px;
+    padding:10px;
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 1.25rem;
 }
