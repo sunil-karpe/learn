@@ -4,22 +4,21 @@ import { useState ,useEffect} from 'react'
 //Before learning the concept of useEffect, Learn the useState for better understanding.
 const UseEffect = () => {
 
-    const [page, setPage] = useState("users");
+    const [pageType, setPageType] = useState("users");
     const [itemdata,setItemData]=useState([]);
 
     //Will run everytime when the state(only the page one) is changed/when the component is rendered first time
     useEffect(()=>{
-        fetch(`https://jsonplaceholder.typicode.com/${page}`)
+        fetch(`https://jsonplaceholder.typicode.com/${pageType}`)
         .then(res=>res.json())
         .then(json=>{
-            console.log(json)
             setItemData(json)})
-    },[page]) //we can defined multiple state within the '[]' to call useEffect when any one state is changed.
+    },[pageType]) //we can defined multiple state within the '[]' to call useEffect when any one state is changed.
 
     //Only run single time when the component is mounted
 
     // useEffect(()=>{
-    //     fetch(`https://jsonplaceholder.typicode.com/${page}`)
+    //     fetch(`https://jsonplaceholder.typicode.com/${pageType}`)
     //     .then(res=>res.json())
     //     .then(json=>{
     //         console.log(json)
@@ -29,7 +28,7 @@ const UseEffect = () => {
     //Will run every time when any of the state is changed/when the component is rendered first time
 
     // useEffect(()=>{
-    //     fetch(`https://jsonplaceholder.typicode.com/${page}`)
+    //     fetch(`https://jsonplaceholder.typicode.com/${pageType}`)
     //     .then(res=>res.json())
     //     .then(json=>{
     //         console.log(json)
@@ -41,15 +40,16 @@ const UseEffect = () => {
 
             <h2>useEffect for performing the actions when the state changes</h2>
 
-            <button onClick={()=>{setPage("users")}}>Users</button>
-            <button onClick={()=>{setPage("posts")}}>Posts</button>
-            <button onClick={()=>{setPage("comments")}}>Comments</button>
+            <button onClick={()=>{setPageType((prevState)=>"users")}}>Users</button>
+            <button onClick={()=>{setPageType((prevState)=>"posts")}}>Posts</button>
+            <button onClick={()=>{setPageType((prevState)=>"comments")}}>Comments</button>
 
-            <h3>{page}</h3>
+            <h3>{pageType}</h3>
 
-            {itemdata.map(item=>{
-                return <pre>{JSON.stringify(item)}</pre>
+            {itemdata.map((item,key)=>{
+                return <p key={key}>{JSON.stringify(item)}</p>
             })}
+
         </div>
     )
 }
